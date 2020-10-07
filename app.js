@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const indexRouter = require('./routes/index');
 const teamsRouter = require('./routes/teams');
+const gamesRouter = require('./routes/games');
 
 const mongoose = require('mongoose');
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/teams', teamsRouter);
+app.use('/games', gamesRouter);
 
 app.listen(port, () => console.log(`Sports API app listening on port ${port}`))
 
