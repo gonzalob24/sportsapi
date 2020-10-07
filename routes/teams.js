@@ -35,8 +35,23 @@ router.post('/', async (req, res) => {
 })
 
 // update one
-router.patch('/', (req, res) => {
-    res.send('Hello world');
+router.patch('/:id', getTeam, (req, res) => {
+    // if new attributes added to model then need more if statements
+    if (req.body.name) {
+        res.team.name = req.body.name;
+    }
+    
+    if (req.body.location) {
+        res.team.location = req.body.location;
+    }
+
+    if (req.body.ranking) {
+        res.team.ranking = req.body.ranking;
+    }
+
+    res.team.save();
+    res.send(res.team)
+    
 });
 
 async function getTeam(req, res, next) {
