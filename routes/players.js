@@ -19,7 +19,6 @@ router.get('/:id', getPlayer, (req, res) => {
 
 // Create one
 router.post('/', async (req, res) => {
-    console.log("test")
     const playerValues = new player({
         ...req.body
     });

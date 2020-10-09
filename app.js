@@ -5,6 +5,8 @@ const indexRouter = require('./routes/index');
 const teamsRouter = require('./routes/teams');
 const gamesRouter = require('./routes/games');
 const playersRouter = require('./routes/players');
+const userRouter = require('./routes/user');
+const draftRounter = require('./routes/draft');
 
 const mongoose = require('mongoose');
 
@@ -19,6 +21,8 @@ app.use('/', indexRouter);
 app.use('/teams', teamsRouter);
 app.use('/games', gamesRouter);
 app.use('/players', playersRouter);
+app.use('/user', userRouter);
+app.use('/draft', draftRounter);
 
 app.listen(port, () => console.log(`Sports API app listening on port ${port}`))
 
